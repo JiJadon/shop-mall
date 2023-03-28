@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navbar-li {
+    @apply inline-block mx-2;
+  }
+  .navbar-li:nth-child(4n + 1) {
+    @apply xl:hidden inline-block;
+  }
+
+  .navbar-li:nth-child(4n + 2) {
+    @apply hidden xl:inline-block;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+    scroll-behavior: smooth;
+  }
+
+  button {
+    @apply focus:outline-none;
+  }
+
+  input:checked + div {
+    @apply border-gray-800 bg-gray-800;
+  }
+  input:checked + div svg {
+    @apply block;
+  }
+
+  .rounded-color:checked + span {
+    @apply bg-transparent ring-1 ring-gray-600 ring-offset-2;
+  }
+
+  .rounded-color:checked + span svg {
+    @apply block;
+  }
+
+  body.modal-open {
+    @apply overflow-hidden fixed;
+  }
+}
